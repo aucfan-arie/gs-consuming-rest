@@ -6,11 +6,9 @@ public class Application {
 
     public static void main(String args[]) {
         RestTemplate restTemplate = new RestTemplate();
-        Page page = restTemplate.getForObject("http://graph.facebook.com/pivotalsoftware", Page.class);
-        System.out.println("Name:    " + page.getName());
-        System.out.println("About:   " + page.getAbout());
-        System.out.println("Phone:   " + page.getPhone());
-        System.out.println("Website: " + page.getWebsite());
+        Person person = restTemplate.getForObject("http://localhost:8080/people/1", Person.class);
+        System.out.println("FirstName:    " + person.getFirstName());
+        System.out.println("LastName:   " + person.getLastName());
     }
 
 }
